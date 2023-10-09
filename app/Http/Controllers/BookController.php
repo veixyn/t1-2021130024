@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -12,7 +13,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        return view('book');
+        $books = Book::paginate(10);
+        return view('books.index', compact('books'));
     }
 
     /**
@@ -20,7 +22,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('books.create');
     }
 
     /**
@@ -31,20 +33,29 @@ class BookController extends Controller
         $validated = $request->validate([
             'isbn' => 'required|numeric|min:13',
             'judul' => 'required|string',
-            'halaman' => 'required|numeric|digits_between:1,2',
+            'halaman' => 'required|numeric|digits_between:1,3',
             'kategori' => 'required',
             'penerbit' => 'required|string',
         ]);
 
-        $book = new Book();
-        $book -> isbn = $validated['isbn'];
-        $book -> judul = $validated['judul'];
-        $book -> halaman = $validated['halaman'];
-        $book -> kategori = $validated['kategori'];
-        $book -> penerbit = $validated['penerbit'];
-        $book -> save();
+        // $book = new Book();
+        // $book -> isbn = $validated['isbn'];
+        // $book -> judul = $validated['judul'];
+        // $book -> halaman = $validated['halaman'];
+        // $book -> kategori = $validated['kategori'];
+        // $book -> penerbit = $validated['penerbit'];
+        // $book -> save();
 
-        return redirect('/book')->with('success', 'Buku berhasil ditambahkan.');
+        $book = Book::create([
+            'isbn' => $validated['isbn'],
+            'judul' => $validated['judul'],
+            'halaman' => $validated['halaman'],
+            'kategori' => $validated['kategori'],
+            'penerbit' => $validated['penerbit'],
+            // 'published_at' => $request->has('is_published') ? Carbon::now() : null,
+        ]);
+
+        return redirect()->route('books.index')->with('success', 'Buku berhasil ditambahkan.');
     }
 
     /**
@@ -52,7 +63,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        //
+        return view('books.show', compact('book'));
     }
 
     /**
@@ -60,7 +71,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('books.edit', compact('book'));
     }
 
     /**
@@ -68,7 +79,23 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        $validated = $request->validate([
+            'isbn' => 'required|numeric|min:13',
+            'judul' => 'required|string',
+            'halaman' => 'required|numeric|digits_between:1,3',
+            'kategori' => 'required',
+            'penerbit' => 'required|string',
+        ]);
+
+        $book->update([
+            'isbn' => $validated['isbn'],
+            'judul' => $validated['judul'],
+            'halaman' => $validated['halaman'],
+            'kategori' => $validated['kategori'],
+            'penerbit' => $validated['penerbit'],
+        ]);
+
+        return redirect()->route('books.index')->with('success', 'Book updated successfully.');
     }
 
     /**
@@ -76,6 +103,7 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        $book->delete();
+        return redirect()->route('books.index')->with('success', 'Article deleted successfully.');
     }
 }

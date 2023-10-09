@@ -25,19 +25,20 @@
 
     <div class="row my-5">
         <div class="col-6">
-            <form action="" method="POST">
+            <form action="{{ route('books.update', $book) }}" method="POST" enctype="multipart/form-data">
+                @method('PUT')
                 @csrf
                 <div class="mb-3 col-md-8 col-sm-12">
                     <label for="isbn" class="form-label">ISBN</label>
-                    <input type="text" class="form-control" name="isbn" value={{ old('isbn')}}>
+                    <input type="text" class="form-control" name="isbn" value={{ old('isbn', $book->isbn)}}>
                 </div>
                 <div class="mb-3 col-md-8 col-sm-12">
                     <label for="judul" class="form-label">Judul Buku</label>
-                    <input type="text" class="form-control" name="judul" value={{ old('judul')}}>
+                    <input type="text" class="form-control" name="judul" value={{ old('judul', $book->judul)}}>
                 </div>
                 <div class="mb-3 col-md-8 col-sm-12">
                     <label for="halaman" class="form-label">Halaman</label>
-                    <input type="text" class="form-control" name="halaman" value={{ old('halaman')}}>
+                    <input type="text" class="form-control" name="halaman" value={{ old('halaman', $book->halaman)}}>
                 </div>
                 <div class="mb-3 col-md-8 col-sm-12">
                     <label for="kategori" class="form-label">Kategori</label><br>
@@ -55,7 +56,7 @@
                 </div>
                 <div class="mb-3 col-md-8 col-sm-12">
                     <label for="penerbit" class="form-label">Penerbit</label>
-                    <input type="text" class="form-control" name="penerbit" value={{ old('penerbit')}}>
+                    <input type="text" class="form-control" name="penerbit" value={{ old('penerbit', $book->penerbit)}}>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

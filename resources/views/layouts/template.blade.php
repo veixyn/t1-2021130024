@@ -14,10 +14,10 @@
         <header class="blog-header py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1">
-                    <a class="link-secondary" href="#">Subscribe</a>
+                    <a class="link-secondary" href="{{ route('books.index') }}">List</a>
                 </div>
                 <div class="col-4 text-center">
-                    <a class="blog-header-logo text-dark" href="{{-- route('landing') --}}">Blogging</a>
+                    <a class="blog-header-logo text-dark" href="{{ route('landing') }}">Books List</a>
                 </div>
                 <div class="col-4 d-flex justify-content-end align-items-center">
                     <a class="link-secondary" href="#" aria-label="Search">
@@ -58,7 +58,7 @@
 
     <footer class="blog-footer">
         <p>
-            Copyright © {{ date('Y') }} <a href="/">Blogging</a> - <a href="{{-- route('contact-us.index') --}}">Subscribe</a>
+            Copyright © {{ date('Y') }} <a href="/">Books List</a> - <a href="{{-- route('contact-us.index') --}}">Subscribe</a>
         </p>
         <p>
             <a href="#">Back to top</a>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\LandingController;
 use App\Models\Book;
 use Illuminate\Support\Facades\Route;
 
@@ -15,14 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landing');
-});
+Route::get('/', LandingController::class)->name('landing');
 
-Route::get('/template', function() {
-    return view('layouts.template');
-});
+// Route::get('/template', function() {
+//     return view('layouts.template');
+// });
 
-Route::get('/book', [BookController::class, 'index']);
+Route::get('/books', [BookController::class, 'index'])->name('book.index');
 
-Route::post('/book', [BookController::class, 'store']);
+Route::post('/books', [BookController::class, 'store'])->name('book-store');
+
+Route::resource('books', BookController::class);
+
+// Route::get('/book', [BookController::class, 'create']);
