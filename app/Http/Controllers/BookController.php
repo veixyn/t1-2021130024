@@ -31,7 +31,7 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'isbn' => 'required|numeric|min:13',
+            'isbn' => 'required|numeric|min:13|max:13',
             'judul' => 'required|string',
             'halaman' => 'required|numeric|digits_between:1,3',
             'kategori' => 'required',
@@ -80,7 +80,7 @@ class BookController extends Controller
     public function update(Request $request, Book $book)
     {
         $validated = $request->validate([
-            'isbn' => 'required|numeric|min:13',
+            'isbn' => 'required|numeric|min:13|max:13',
             'judul' => 'required|string',
             'halaman' => 'required|numeric|digits_between:1,3',
             'kategori' => 'required',
@@ -95,7 +95,7 @@ class BookController extends Controller
             'penerbit' => $validated['penerbit'],
         ]);
 
-        return redirect()->route('books.index')->with('success', 'Book updated successfully.');
+        return redirect()->route('books.index')->with('success', 'Buku berhasil di-update.');
     }
 
     /**
@@ -104,6 +104,6 @@ class BookController extends Controller
     public function destroy(Book $book)
     {
         $book->delete();
-        return redirect()->route('books.index')->with('success', 'Article deleted successfully.');
+        return redirect()->route('books.index')->with('success', 'Buku berhasil di hapus.');
     }
 }
