@@ -22,7 +22,6 @@ class BookController extends Controller
      */
     public function create()
     {
-        // $categories = ['Uncategorized', 'Sci-fi', 'Novel', 'History', 'Biography', 'Romance', 'Education', 'Culinary', 'Comic'];
         return view('books.create');
     }
 

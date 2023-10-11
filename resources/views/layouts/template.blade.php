@@ -33,23 +33,6 @@
                 </div>
             </div>
         </header>
-
-        {{-- <div class="nav-scroller py-1 mb-2">
-            <nav class="nav d-flex justify-content-between">
-                <a class="p-2 link-secondary" href="#">World</a>
-                <a class="p-2 link-secondary" href="#">U.S.</a>
-                <a class="p-2 link-secondary" href="#">Technology</a>
-                <a class="p-2 link-secondary" href="#">Design</a>
-                <a class="p-2 link-secondary" href="#">Culture</a>
-                <a class="p-2 link-secondary" href="#">Business</a>
-                <a class="p-2 link-secondary" href="#">Politics</a>
-                <a class="p-2 link-secondary" href="#">Opinion</a>
-                <a class="p-2 link-secondary" href="#">Science</a>
-                <a class="p-2 link-secondary" href="#">Health</a>
-                <a class="p-2 link-secondary" href="#">Style</a>
-                <a class="p-2 link-secondary" href="#">Travel</a>
-            </nav>
-        </div> --}}
     </div>
 
     <main class="container">
@@ -58,7 +41,7 @@
 
     <footer class="blog-footer">
         <p>
-            Copyright © {{ date('Y') }} <a href="/">Books List</a> - <a href="{{-- route('contact-us.index') --}}">Subscribe</a>
+            Copyright © {{ date('Y') }} <a href="{{ route('books.index') }}">Books List</a> - <a href="{{-- route('contact-us.index') --}}">Subscribe</a>
         </p>
         <p>
             <a href="#">Back to top</a>

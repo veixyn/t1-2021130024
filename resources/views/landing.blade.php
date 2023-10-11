@@ -19,7 +19,6 @@
     </div>
     @endif
 
-    {{-- Articles Card --}}
     <div class="row mb-2">
         @forelse ($books as $book)
             <div class="col-md-6">

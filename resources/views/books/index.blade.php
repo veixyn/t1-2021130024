@@ -12,7 +12,6 @@
         <table class="table table-bordered mb-5">
             <thead>
                 <tr class="table-dark">
-                    {{-- <th scope="col">#</th> --}}
                     <th scope="col">ISBN</th>
                     <th scope="col">Judul</th>
                     <th scope="col">Halaman</th>
