@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', $book->title)
+@section('title', $book->judul)
 
 @section('content')
     <article class="blog-post my-4">
@@ -10,6 +10,6 @@
         <p>Penerbit: {{ $book->penerbit }}</p>
         <p>Kategori: {{ $book->kategori }}</p>
         <p>Jumlah Halaman: {{ $book->halaman }}</p>
-        <p>{{ $book->updated_at }}</p>
+        <p>Ditambahkan pada: {{ $book->updated_at }}</p>
     </article>
 @endsection

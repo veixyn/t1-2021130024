@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', 'Landing Page')
+@section('title', 'Perpustakaan STMIK LIKMI')
 
 @section('content')
     @if ($featured)

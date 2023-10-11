@@ -3,7 +3,7 @@
 @section('title', 'Book List')
 
 @section('content')
-    <div class="mt-4 p-5 bg-danger text-white rounded">
+    <div class="mt-4 p-5 bg-dark text-white rounded">
         <h1>All Books</h1>
         <a href="{{ route('books.create') }}" class="btn btn-light btn-sm">Add New Books</a>
     </div>
@@ -11,7 +11,7 @@
     <div class="container mt-5">
         <table class="table table-bordered mb-5">
             <thead>
-                <tr class="table-danger">
+                <tr class="table-dark">
                     {{-- <th scope="col">#</th> --}}
                     <th scope="col">ISBN</th>
                     <th scope="col">Judul</th>

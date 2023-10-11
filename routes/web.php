@@ -28,4 +28,8 @@ Route::post('/books', [BookController::class, 'store'])->name('book-store');
 
 Route::resource('books', BookController::class);
 
+Route::get('/books.show/{book:isbn}', function (Book $book) {
+    return $book;
+});
+
 // Route::get('/book', [BookController::class, 'create']);
