@@ -3,8 +3,8 @@
 @section('title', 'Contact Us')
 
 @section('content')
-    <div class="mt-4 p-5 bg-primary text-white rounded">
-        <h1>Book</h1>
+    <div class="mt-4 p-5 bg-dark text-white rounded">
+        <h1>Edit Book</h1>
     </div>
 
     @if (session()->has('success'))
@@ -30,33 +30,33 @@
                 @csrf
                 <div class="mb-3 col-md-8 col-sm-12">
                     <label for="isbn" class="form-label">ISBN</label>
-                    <input type="text" class="form-control" name="isbn" value={{ old('isbn', $book->isbn)}}>
+                    <input type="text" class="form-control" name="isbn" value="{{ old('isbn', $book->isbn)}}">
                 </div>
                 <div class="mb-3 col-md-8 col-sm-12">
                     <label for="judul" class="form-label">Judul Buku</label>
-                    <input type="text" class="form-control" name="judul" value={{ old('judul', $book->judul)}}>
+                    <input type="text" class="form-control" name="judul" value="{{ old('judul', $book->judul)}}">
                 </div>
                 <div class="mb-3 col-md-8 col-sm-12">
                     <label for="halaman" class="form-label">Halaman</label>
-                    <input type="text" class="form-control" name="halaman" value={{ old('halaman', $book->halaman)}}>
+                    <input type="text" class="form-control" name="halaman" value="{{ old('halaman', $book->halaman)}}">
                 </div>
                 <div class="mb-3 col-md-8 col-sm-12">
                     <label for="kategori" class="form-label">Kategori</label><br>
                     <select name="kategori" id="kategori" class="form-select form-select-lg mb-3">
-                        <option value="uncategorized">Uncategorized</option>
-                        <option value="sci-fi">Science Fiction</option>
-                        <option value="novel">Novel</option>
-                        <option value="history">History</option>
-                        <option value="biography">Biography</option>
-                        <option value="romance">Romance</option>
-                        <option value="education">Education</option>
-                        <option value="culinary">Culinary</option>
-                        <option value="comic">Comic</option>
+                        <option value="Uncategorized" {{ $book->kategori === 'Uncategorized' ? 'selected' : ''}}>Uncategorized</option>
+                        <option value="Sci-fi" {{ $book->kategori === 'Sci-fi' ? 'selected' : ''}}>Science Fiction</option>
+                        <option value="Novel" {{ $book->kategori === 'Novel' ? 'selected' : ''}}>Novel</option>
+                        <option value="History" {{ $book->kategori === 'History' ? 'selected' : ''}}>History</option>
+                        <option value="Biography" {{ $book->kategori === 'Biography' ? 'selected' : ''}}>Biography</option>
+                        <option value="Romance" {{ $book->kategori === 'Romance' ? 'selected' : ''}}>Romance</option>
+                        <option value="Education" {{ $book->kategori === 'Education' ? 'selected' : ''}}>Education</option>
+                        <option value="Culinary" {{ $book->kategori === 'Culinary' ? 'selected' : ''}}>Culinary</option>
+                        <option value="Comic" {{ $book->kategori === 'Comic' ? 'selected' : ''}}>Comic</option>
                     </select>
                 </div>
                 <div class="mb-3 col-md-8 col-sm-12">
                     <label for="penerbit" class="form-label">Penerbit</label>
-                    <input type="text" class="form-control" name="penerbit" value={{ old('penerbit', $book->penerbit)}}>
+                    <input type="text" class="form-control" name="penerbit" value="{{ old('penerbit', $book->penerbit)}}">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

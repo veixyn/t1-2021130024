@@ -18,7 +18,7 @@ class BookSeeder extends Seeder
             $isbn = $faker->numberBetween(1000000000000, 9999999999999);
             $judul = $faker->sentence(3);
             $halaman = $faker->numberBetween(1, 999);
-            $kategori = $faker->randomElement(['uncategorized', 'sci-fi', 'novel', 'history', 'biography', 'romance', 'education', 'culinary', 'comic']);
+            $kategori = $faker->randomElement(['Uncategorized', 'Sci-fi', 'Novel', 'History', 'Biography', 'Romance', 'Education', 'Culinary', 'Comic']);
             $penerbit = $faker->word();
             $created_at = $faker->dateTimeBetween('-3 months', 'now');
 

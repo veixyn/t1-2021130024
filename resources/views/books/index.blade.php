@@ -27,7 +27,7 @@
                 @forelse ($books as $book)
                     <tr>
                         <th scope="row">{{ $book->isbn }}</th>
-                        <td>{{ $book->judul }}</td>
+                        <td><a href="{{route('books.show', $book)}}">{{ $book->judul}}</a></td>
                         <td>{{ $book->halaman }}</td>
                         <td>{{ $book->kategori }}</td>
                         <td>{{ $book->penerbit }}</td>

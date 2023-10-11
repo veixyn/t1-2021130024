@@ -42,15 +42,15 @@
                 <div class="mb-3 col-md-8 col-sm-12">
                     <label for="kategori" class="form-label">Kategori</label><br>
                     <select name="kategori" id="kategori" class="form-select form-select-lg mb-3">
-                        <option value="uncategorized">Uncategorized</option>
-                        <option value="sci-fi">Science Fiction</option>
-                        <option value="novel">Novel</option>
-                        <option value="history">History</option>
-                        <option value="biography">Biography</option>
-                        <option value="romance">Romance</option>
-                        <option value="education">Education</option>
-                        <option value="culinary">Culinary</option>
-                        <option value="comic">Comic</option>
+                        <option value="Uncategorized">Uncategorized</option>
+                        <option value="Sci-fi">Science Fiction</option>
+                        <option value="Novel">Novel</option>
+                        <option value="History">History</option>
+                        <option value="Biography">Biography</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Education">Education</option>
+                        <option value="Culinary">Culinary</option>
+                        <option value="Comic">Comic</option>
                     </select>
                 </div>
                 <div class="mb-3 col-md-8 col-sm-12">

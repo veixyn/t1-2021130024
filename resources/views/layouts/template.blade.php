@@ -29,7 +29,7 @@
                             <path d="M21 21l-5.2-5.2"></path>
                         </svg>
                     </a>
-                    <a class="btn btn-sm btn-outline-secondary" href="#">2021130024 - Tangana Vito</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="https://media.tenor.com/m-2XXQuq-OwAAAAd/peace-out.gif">2021130024 - Tangana Vito</a>
                 </div>
             </div>
         </header>
