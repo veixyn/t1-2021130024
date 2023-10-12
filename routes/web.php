@@ -23,7 +23,3 @@ Route::get('/books', [BookController::class, 'index'])->name('book.index');
 Route::post('/books', [BookController::class, 'store'])->name('book-store');
 
 Route::resource('books', BookController::class);
-
-Route::resource('books', BookController::class)->parameters([
-    'books' => 'isbn',
-]);
